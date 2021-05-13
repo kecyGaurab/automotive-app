@@ -12,15 +12,15 @@
      </select>
       <div class="input-item">
         <label for="distance">Distance</label>
-        <input type="number" min="0" class="input-item-field" id="distance" placeholder="Distance in km" v-model="distance" />
+        <input type="number" min="1" class="input-item-field" id="distance" placeholder="Distance in km" v-model="distance" />
       </div>
       <div class="input-item">
         <label for="speed1">Speed1</label>
-        <input type="number" min="0" class="input-item-field" placeholder="Speed 1 in km/hr" v-model="speed1" id="speed1" />
+        <input type="number" min="1" class="input-item-field" placeholder="Speed 1 in km/hr" v-model="speed1" id="speed1" />
       </div>
       <div class="input-item">
         <label for="speed2">Speed2</label>
-        <input type="number" min="0" class="input-item-field" id="speed2" placeholder="Speed 2 in km/hr" v-model="speed2" />
+        <input type="number" min="1" class="input-item-field" id="speed2" placeholder="Speed 2 in km/hr" v-model="speed2" />
       </div>
     </div>
     <p>Total consumption1: {{totalConsumption1}} litres</p>

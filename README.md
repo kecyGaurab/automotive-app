@@ -1,24 +1,18 @@
 # automotive-app
 
-## Project setup
-```
-yarn install
-```
+Automotive application is built to let users compare fuel consumption, and time taken when driving at different speed.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+# Features
 
-### Compiles and minifies for production
-```
-yarn build
-```
+* Vue 
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Installation
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* `git clone https://github.com/kecyGaurab/automotive-app`.
+* `cd automotive-app`.
+* `yarn install`.
+* `yarn serve` to start vue app.
+* `go to localhost:8080 on the browser`.
+* Application has started.
+
+
