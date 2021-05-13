@@ -1,48 +1,52 @@
 <template>
   <div class="card-container">
-    <h1>{{name}}</h1>
-    <h4>{{mileage}}</h4>
-    <p>Total consumption1: {{totalConsumption1}}</p>
-    <p>Total consumption2: {{totalConsumption2}}</p>
-    <div>Time1:
+    <h1>Calculate</h1>
+    <div class="input-group-container">
+      <label for="mileage">Car mileage: </label>
+       <select v-model="mileage" id="mileage" name="mileage">
+        <option value="" selected disabled hidden>Choose</option>
+        <option value=3>3</option>
+        <option value=3.5>3.5</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+     </select>
+      <div class="input-item">
+        <label for="distance">Distance</label>
+        <input type="number" min="0" class="input-item-field" id="distance" placeholder="Distance in km" v-model="distance" />
+      </div>
+      <div class="input-item">
+        <label for="speed1">Speed1</label>
+        <input type="number" min="0" class="input-item-field" placeholder="Speed 1 in km/hr" v-model="speed1" id="speed1" />
+      </div>
+      <div class="input-item">
+        <label for="speed2">Speed2</label>
+        <input type="number" min="0" class="input-item-field" id="speed2" placeholder="Speed 2 in km/hr" v-model="speed2" />
+      </div>
+    </div>
+    <p>Total consumption1: {{totalConsumption1}} litres</p>
+    <p>Total consumption2: {{totalConsumption2}} litres</p>
+    <div>Total time 1:
       <span v-if="time1 && speed1 && speed2">{{formatTime(time1)}}</span> 
     </div>
-    <div>Time2:
+    <div>Total time 2:
       <span v-if="time1 && speed1 && speed2">{{formatTime(time2)}}</span> 
        </div>
     <div>Time saved: 
       <span v-if="speed1 && speed2">{{formatTime(time1-time2)}}</span> 
       </div>
-    <div class="input-group-container">
-      <div class="input-item">
-        <label for="distance">Distance</label>
-        <input class="input-item-field" id="distance" placeholder="Distance in km" v-model="distance" />
-      </div>
-      <div class="input-item">
-        <label for="speed1">Speed1</label>
-        <input class="input-item-field" placeholder="Speed 1 in km/hr" v-model="speed1" id="speed1" />
-      </div>
-      <div class="input-item">
-        <label for="speed2">Speed2</label>
-        <input class="input-item-field" id="speed2" placeholder="Speed 2 in km/hr" v-model="speed2" />
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'card-containerWorld',
-  props: {
-    mileage: Number,
-    name: String,
-  },
   data: () => {
     return {
       distance: null,
       speed1: null,
       speed2: null,
       slope: 1.009,
+      mileage: "",
     }
   },
   computed: {
@@ -67,7 +71,8 @@ export default {
 },
 methods: {
   totalConsumption: function (speed){
-    return Math.round((this.fuelperKm*this.distance*Math.pow(this.slope, speed)*100/100))
+    const fuelconsumed = this.fuelperKm*this.distance*Math.pow(this.slope, speed)
+    return Math.round((fuelconsumed + Number.EPSILON) * 100) / 1000;
   },
   time: function (speed){
     return this.distance/speed;

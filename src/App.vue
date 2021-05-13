@@ -5,9 +5,7 @@
   </nav>
 </div>
 <div class="container">
-    <Car class="car" name="CAR A" mileage='3'/>
-    <Car class="car" name="CAR B" mileage='3.5'/>
-    <Car class="car" name="CAR C" mileage='4'/>
+    <Car class="car"/>
   </div>
 </template>
 
