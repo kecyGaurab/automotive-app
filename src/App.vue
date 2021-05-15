@@ -7,10 +7,14 @@
 <div class="container">
     <Car class="car"/>
   </div>
+  <footer class="footer">
+    <a href="https://www.github.com/kecyGaurab"> Made by kecyGaurab</a>
+  </footer>
 </template>
 
 <script>
 import Car from './components/Car.vue'
+
 
 export default {
   name: 'App',
@@ -45,5 +49,11 @@ export default {
 .navbar-container{
   background-color:black;
   margin-bottom: 60px;
+}
+.footer{
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
 }
 </style>
