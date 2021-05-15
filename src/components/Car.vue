@@ -62,10 +62,10 @@ export default {
   },
     consumptionDifference: function(){
       const difference = this.totalConsumption2 - this.totalConsumption1;
-      return Math.round((difference + Number.EPSILON) * 100) / 1000;
+      return Math.round((difference + Number.EPSILON) * 100) / 100;
 
     },
-  time1: function (){
+    time1: function (){
        return this.time(this.speed1);
 
   },
