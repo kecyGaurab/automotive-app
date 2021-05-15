@@ -77,7 +77,7 @@ export default {
 methods: {
   totalConsumption: function (speed){
     const fuelconsumed = this.fuelperKm*this.distance*Math.pow(this.slope, speed)
-    return Math.round((fuelconsumed + Number.EPSILON) * 100) / 1000;
+    return Math.round((fuelconsumed + Number.EPSILON) * 100) / 100;
   },
   time: function (speed){
     return this.distance/speed;
