@@ -15,4 +15,7 @@ Automotive application is built to let users compare fuel consumption, and time 
 * `go to localhost:8080 on the browser`.
 * Application has started.
 
+## Deployment
+* The application is deployed to netlify and can be accessed from `https://automotive-meter.netlify.app`
+
 
